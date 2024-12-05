@@ -13,10 +13,12 @@ public class Server {
             System.out.println("server now listening...");
             while(true){
                 Socket sock = socket.accept();
-                System.out.println("Client :"+socket.getInetAddress().getHostAddress());
+                System.out.println("Client :"+sock.getInetAddress().getHostAddress());
+                socket.close();
             }
         } catch(IOException ex){
-            ex.printStackTrace();
+            System.out.println("Server successfully connects a client and close");
         }
+        
     }
 }
